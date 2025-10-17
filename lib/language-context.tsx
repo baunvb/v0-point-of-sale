@@ -3,6 +3,7 @@
 import type React from "react"
 import { createContext, useContext, useEffect, useState } from "react"
 import type { Language } from "@/lib/translations"
+import { translations } from "@/lib/translations"
 
 interface LanguageContextType {
   language: Language
@@ -17,7 +18,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Load language from localStorage on mount
     const savedLanguage = localStorage.getItem("language") as Language | null
     if (savedLanguage && (savedLanguage === "vi" || savedLanguage === "en")) {
       setLanguageState(savedLanguage)
@@ -31,11 +31,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }
 
   const t = (key: string): string => {
-    const translations: Record<Language, Record<string, string>> = {
-      vi: require("@/lib/translations/vi").vi,
-      en: require("@/lib/translations/en").en,
-    }
-    return translations[language]?.[key] || key
+    return translations[language]?.[key as keyof typeof translations.vi] || key
   }
 
   if (!mounted) {
