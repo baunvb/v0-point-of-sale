@@ -1,0 +1,70 @@
+export const vi = {
+  // Common
+  appName: "RestaurantPOS",
+  language: "Ngôn ngữ",
+  english: "English",
+  vietnamese: "Tiếng Việt",
+
+  // Landing Page
+  welcome: "Chào mừng đến",
+  heroDescription:
+    "Hệ thống Point of Sale hiện đại cho nhà hàng. Đặt hàng trực tuyến, quản lý nhà hàng và tối ưu hóa hoạt động bếp.",
+  orderNow: "Đặt Hàng Ngay",
+  orderDescription: "Đặt hàng từ bàn của bạn",
+  orderDetails: "Duyệt menu, chọn các món ăn yêu thích, tùy chỉnh với topping và đặt hàng trực tiếp từ bàn của bạn.",
+  startOrdering: "Bắt Đầu Đặt Hàng",
+  staffPortal: "Cổng Nhân Viên",
+  staffPortalDescription: "Quản lý hoạt động nhà hàng",
+  staffPortalDetails:
+    "Admin, Manager, Employee và Kitchen staff có thể đăng nhập để quản lý orders, menu, bàn và xem kitchen display realtime.",
+  staffLogin: "Đăng Nhập Nhân Viên",
+  features: "Tính Năng",
+  easyOrdering: "Đặt Hàng Dễ Dàng",
+  easyOrderingDesc: "Giao diện đơn giản và trực quan để khách hàng đặt hàng từ bàn của họ",
+  roleBasedAccess: "Truy Cập Dựa Trên Vai Trò",
+  roleBasedAccessDesc: "Các dashboard khác nhau cho Admin, Manager, Employee và Kitchen staff",
+  realTimeKitchen: "Kitchen Display Realtime",
+  realTimeKitchenDesc: "Cập nhật order trực tiếp và theo dõi trạng thái cho hoạt động bếp",
+  copyright: "© 2025 RestaurantPOS. Tất cả quyền được bảo lưu.",
+
+  // Login Page
+  pointOfSale: "Point of Sale",
+  signInToAccount: "Đăng nhập vào tài khoản của bạn",
+  email: "Email",
+  password: "Mật khẩu",
+  signIn: "Đăng Nhập",
+  signingIn: "Đang Đăng Nhập...",
+  invalidEmailPassword: "Email hoặc mật khẩu không hợp lệ",
+  demoCredentials: "Thông Tin Đăng Nhập Demo:",
+  admin: "Admin",
+  manager: "Manager",
+  employee: "Nhân Viên",
+
+  // Order Page
+  restaurantOrder: "Đặt Hàng Nhà Hàng",
+  selectTableAndOrder: "Chọn bàn của bạn và bắt đầu đặt hàng",
+  selectTable: "Chọn Bàn",
+  chooseTableNumber: "Chọn số bàn để bắt đầu đặt hàng",
+  orEnterTableNumber: "Hoặc nhập số bàn:",
+  tableNumber: "Số bàn",
+  go: "Đi",
+  table: "Bàn",
+  tableSelected: "được chọn",
+  pleaseSelectTable: "Vui lòng chọn một bàn",
+  cartIsEmpty: "Giỏ hàng trống",
+  failedToLoadMenuItems: "Không thể tải menu items",
+  failedToSubmitOrder: "Không thể gửi order",
+  orderSubmittedSuccessfully: "Order đã được gửi đến bếp thành công!",
+  paymentFeatureComingSoon: "Tính năng thanh toán sẽ sớm có!",
+
+  // Order Cart
+  orderSummary: "Tóm Tắt Order",
+  noItemsInCart: "Không có items trong giỏ hàng",
+  toppings: "Topping",
+  addNotes: "Thêm ghi chú...",
+  total: "Tổng Cộng",
+  addToOrder: "Thêm Vào Order",
+  submitting: "Đang Gửi...",
+  payment: "Thanh Toán",
+  all: "Tất Cả",
+}

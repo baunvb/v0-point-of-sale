@@ -1,0 +1,54 @@
+"use client"
+
+import type React from "react"
+import { createContext, useContext, useEffect, useState } from "react"
+import type { Language } from "@/lib/translations"
+
+interface LanguageContextType {
+  language: Language
+  setLanguage: (lang: Language) => void
+  t: (key: string) => string
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [language, setLanguageState] = useState<Language>("vi")
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    // Load language from localStorage on mount
+    const savedLanguage = localStorage.getItem("language") as Language | null
+    if (savedLanguage && (savedLanguage === "vi" || savedLanguage === "en")) {
+      setLanguageState(savedLanguage)
+    }
+    setMounted(true)
+  }, [])
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang)
+    localStorage.setItem("language", lang)
+  }
+
+  const t = (key: string): string => {
+    const translations: Record<Language, Record<string, string>> = {
+      vi: require("@/lib/translations/vi").vi,
+      en: require("@/lib/translations/en").en,
+    }
+    return translations[language]?.[key] || key
+  }
+
+  if (!mounted) {
+    return <>{children}</>
+  }
+
+  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+}
+
+export function useLanguageContext() {
+  const context = useContext(LanguageContext)
+  if (!context) {
+    throw new Error("useLanguageContext must be used within LanguageProvider")
+  }
+  return context
+}
